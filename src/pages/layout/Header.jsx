@@ -17,16 +17,16 @@ const Header = () => {
             </S.LeftSection>
 
             <S.CenterSection>
-                <S.Logo src="/assets/logo.svg" alt="Cooing" />
+                <Link to="/about"><S.Logo src="/assets/logo.svg" alt="Cooing" /></Link>
             </S.CenterSection>
 
             <S.RightSection>
                 <Link to="/login">
                 <img src="/assets/user.svg" alt="user icon" />
                 </Link>
-                <Link to="/cart">
+                {/* <Link to="/cart">
                 <img src="/assets/cart.svg" alt="cart icon" />
-                </Link>
+                </Link> */}
             </S.RightSection>
         </S.Header>
 
@@ -36,7 +36,7 @@ const Header = () => {
             <S.MenuList>
                 <Link to="/about" onClick={toggleMenu}>ABOUT</Link>
                 <Link to="/classInfo" onClick={toggleMenu}>CLASS</Link>
-                <Link to="/shop" onClick={toggleMenu}>PRODUCTS</Link>
+                {/* <Link to="/shop" onClick={toggleMenu}>PRODUCTS</Link> */}
             </S.MenuList>
         <S.CloseButton onClick={toggleMenu}>✕</S.CloseButton>
   </S.FullScreenMenu>

@@ -62,6 +62,16 @@ function ApplicationForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!applicantName.trim()) {
+      alert('이름을 입력해주세요.');
+      return;
+    }
+    if (!mobile.trim()) {
+      alert('전화번호를 입력해주세요.');
+      return;
+    }
+    
     
     if (!announcementId || !preferredDate || !preferredTime || !paymentMethod) return;
 
@@ -84,12 +94,13 @@ function ApplicationForm() {
     };
 
     try {
-      await axios.post('/api/applications', payload);
+      await axios.post('http://localhost:8080/api/applications', payload);
       alert('신청이 완료되었습니다. 결제가 확인되는 즉시 예약이 확정됩니다.');
       navigate('/');
     } catch {
       alert('신청 중 문제가 발생했습니다. 다시 시도해주세요.');
     }
+    console.log("전송되는 payload:", payload);
   };
 
   // 카카오페이 결제 진행 버튼 클릭 시
@@ -146,14 +157,17 @@ function ApplicationForm() {
           {availableDates.map(date => {
             const dateStr = dayjs(date).format('YYYY-MM-DD');
             const isToday = dayjs().isSame(date, 'day');
-            const monthYear = dayjs(date).format('YYYY년 MM월'); // 월과 년도 포맷 추가
+            const year = dayjs(date).format('YYYY년'); 
+            const month = dayjs(date).format('MM월'); 
+            const dayOfWeek = dayjs(date).format('dd');
             return (
               <S.DateItem
                 key={dateStr}
                 $selected={preferredDate === dateStr}
                 onClick={() => setPreferredDate(dateStr)}>
-                <div>{monthYear}</div>  {/* 년도와 월 표시 */}
-                <div>{dayjs(date).date()}</div>
+                <div>{year}</div>  
+                <div>{month} {dayjs(date).date()}일</div>
+                <small>{dayOfWeek}</small>
                 {isToday && <div style={{ fontSize: '10px', color: '#3b82f6' }}>오늘</div>}
               </S.DateItem>
             );
@@ -243,7 +257,7 @@ function ApplicationForm() {
 
       {/* 카카오페이 QR 코드 팝업 */}
       {showQRCodeModal && (
-        <S.Modal visible={showQRCodeModal ? "true" : "false"}>
+        <S.Modal $visible={showQRCodeModal ? "true" : "false"}>
           <S.ModalContent>
             <S.ModalTitle>결제 페이지</S.ModalTitle>
             <p>아래 QR 코드를 스캔하여 결제를 진행해주세요.</p>
@@ -255,7 +269,7 @@ function ApplicationForm() {
 
       {/* 계좌이체 팝업 */}
       {showBankTransferModal && (
-        <S.Modal visible={showBankTransferModal ? "true" : "false"}>
+        <S.Modal $visible={showBankTransferModal ? "true" : "false"}>
           <S.ModalContent>
             <S.ModalTitle>계좌 정보</S.ModalTitle>
             <p>계좌번호: {bankDetails.accountNumber}</p>

@@ -462,7 +462,7 @@ S.Modal = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  display: ${(props) => (props.show ? 'flex' : 'none')};
+  display: ${(props) => (props.$visible ? 'flex' : 'none')};
   justify-content: center;
   align-items: center;
 `;
