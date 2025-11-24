@@ -2,6 +2,7 @@ import {createBrowserRouter} from 'react-router-dom'
 import Layout from '../pages/layout/Layout'
 import NotFound from '../pages/NotFound'
 import About from '../pages/about/About'
+import Showcase from '../pages/products/Showcase'
 import ClassInfo from '../pages/class/ClassInfo'
 import AdminLayout from '../pages/admin/AdminLayout';
 import AnnouncementList from '../pages/admin/AnnouncementList';
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
                 path: '/application',
                 element: <ApplicationForm />
             },
+            {
+                path: '/showcase',
+                element: <Showcase />
+            }
         ]
     },
     {
