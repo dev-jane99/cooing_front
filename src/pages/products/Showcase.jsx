@@ -12,6 +12,7 @@ const showcaseItems = [
   { id: 5, category: "화과자", title: "설날 한라봉 화과자", description: "한입에 은은하게 퍼지는 한라봉의 향, 한라봉 화과자", img: `${PUBLIC_URL}/assets/products/hanlabong.png`, detail: "제주산 한라봉을 사용해 풍부하고 오래가는 상큼함을 담아내었습니다. 눈으로 한번, 코로 한번, 입으로 한번 즐겨보세요." },
   { id: 6, category: "도라야키", title: "말차 팥 도라야키", description: "푹 고아낸 팥소를 가득담은 말차 도라야키", img: `${PUBLIC_URL}/assets/products/dora1.png`, detail: "20시간 고아낸 핸드메이드 팥소를 듬뿍넣고, 일본산 고급 말차를 곱게 걸러내어 진한 말차향을 가득 담은 크림으로 부드러움을 더해낸 도라야키. 쌉싸름한 말차와 달달하고 부드러운 팥의 환상적인 콜라보레이션." },
   { id: 7, category: "모찌", title: "사쿠라 모찌", description: "벗꽃절임을 추가한 단짠단짠 모찌", img: `${PUBLIC_URL}/assets/products/mochi1.png`, detail: "일본에서 직수입한 벗꽃절임을 올려낸 밥알이 살아있는 사쿠라 모찌. 묘하게 중독되는 쫄깃함과 단짠단짠한 조화." },
+  { id: 8, category: "모찌", title: "딸기모찌", description: "달달하고 상큼한 딸기찹쌀떡", img: `${PUBLIC_URL}/assets/products/mochi2.png`, detail: "스테디셀러, 모두가 좋아하는 과일 찹쌀떡의 대표주자 딸기. 날이 추워지면 쿠잉에 딸기모찌 클래스가 다가옵니다. 겨울시즌을 노려보세요!" },
 ];
 
 const categories = ["전체보기", "화과자", "우키시마", "셋빼", "양갱", "도라야키", "모찌"];

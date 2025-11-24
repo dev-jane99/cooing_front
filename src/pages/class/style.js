@@ -4,7 +4,7 @@ const S = {};
 
 S.ClassPage = styled.div`
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 80px 20px;
 `;
@@ -20,6 +20,7 @@ S.SectionTitle = styled.h2`
 `;
 
 S.Announcement = styled.div`
+
   ul {
     list-style: none;
     padding: 0;
@@ -33,7 +34,7 @@ S.Announcement = styled.div`
     border-radius: 12px;
     background: #ffffff;
     margin-bottom: 20px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 
     a {
       color: #2563eb;
@@ -62,7 +63,7 @@ S.StatusBadge = styled.span`
   font-size: 13px;
   font-weight: 500;
   color: white;
-  background-color: ${({ $isActive }) => ($isActive ? '#cbe6c7' : '#eaa9a4')};
+  background-color: ${({ $isActive }) => ($isActive ? '#6faa66ff' : '#eaa9a4')};
 `;
 
 S.AnnouncementInfo = styled.div`
@@ -140,13 +141,18 @@ S.Spinner = styled.div`
 
 
 S.DetailWrapper = styled.div`
+  display:flex;
+  flex-direction: column;
+  // align-items: center;
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  margin-top: 20px;
   background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 `;
 
 S.DetailTitle = styled.h2`
@@ -157,7 +163,7 @@ S.DetailTitle = styled.h2`
 `;
 
 S.DetailDate = styled.p`
-  font-size: 14px;
+  font-size: 19px;
   color: #6b7280;
   margin-bottom: 1.5rem;
 `;
@@ -179,10 +185,14 @@ S.ImageGallery = styled.div`
   img {
     width: 100%;
     max-width: 300px;
-    border-radius: 10px;
     object-fit: cover;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 20px;
+
+    @media (max-width: 600px) {
+      flex: 1 1 100%; 
+    }
   }
+  
 `;
 
 S.ApplyButton = styled.button`
@@ -203,12 +213,14 @@ S.ApplyButton = styled.button`
 
 S.FormWrapper = styled.div`
   width: 100%;
-  max-width: 700px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 40px 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 10px 20px;
   background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 `;
 
 S.FormTitle = styled.h2`

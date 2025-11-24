@@ -20,16 +20,16 @@ function ClassInfo() {
       <S.Announcement>
         <ul>
           {announcements.map((a) => {
-            const thumbnail = a.images && a.images.length > 0 ? a.images[0].imageUrl : null;
+            // const thumbnail = a.images && a.images.length > 0 ? a.images[0].imageUrl : null;
             return (
               <li key={a.id}>
                 <Link to={`/class/${a.id}`}>
                 <S.AnnouncementInfo>
-                  {thumbnail ? (
+                  {/* {thumbnail ? (
                     <img src={thumbnail} alt="썸네일" />
                   ) : (
                     <S.PlaceholderThumb />
-                  )}
+                  )} */}
                   <div className="text">
                     <strong>{a.title}</strong>
                     <small>

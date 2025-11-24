@@ -34,8 +34,8 @@ const Header = () => {
       {isMenuOpen && (
         <S.FullScreenMenu>
             <S.MenuList>
-                <Link to="/showcase" onClick={toggleMenu}>PRODUCTS</Link>
                 <Link to="/about" onClick={toggleMenu}>ABOUT</Link>
+                <Link to="/showcase" onClick={toggleMenu}>PRODUCTS</Link>
                 <Link to="/classInfo" onClick={toggleMenu}>CLASS</Link>
             </S.MenuList>
         <S.CloseButton onClick={toggleMenu}>✕</S.CloseButton>
